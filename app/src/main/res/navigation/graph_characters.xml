@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/characters"
+    app:startDestination="@id/charactersFragment">
+
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.example.paging.ui.characters.CharactersFragment"
+        tools:layout="@layout/fragment_characters">
+
+        <action
+            android:id="@+id/action_characters_to_character_detail"
+            app:destination="@id/characterDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.example.paging.ui.characters.CharacterDetailFragment"
+        tools:layout="@layout/fragment_character_detail">
+            <argument
+                android:name="character"
+                app:nullable="false"
+                app:argType="com.example.paging.model.Character"/>
+    </fragment>
+</navigation>
